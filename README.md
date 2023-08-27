@@ -1,7 +1,7 @@
 ># MyNotebook
 >## Developed by: Martin Hansen
 >## Short description
-> A small student project developed with React Native using Google Firebase
+> A small student project developed with React Native using Google Firebase.
 >## Target platform
 > Android
 > 
@@ -12,10 +12,19 @@
   * Delete a single note
 * Functionality partly supported
   * Image capturing for storing images
-* Technologies
+* Technologies/packages
   * Expo-File-System
     * For saving to local storage
   * Expo-image-picker
     * For capturing images
+  * Expo navigation
+    * Provides the navigation header
+    * Provides page navigation
   * Google Firebase
     * Used to store notes in Firestore database
+
+># For next iteration
+> * Google Firebase authentication
+>   * Show saved images in note details page
+>   * Restrict access to Firebase services
+>   * User login
