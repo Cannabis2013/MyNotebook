@@ -1,20 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import 'react-native-get-random-values'
+import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
+import React from "react";
+import {createNativeStackNavigator} from "@react-navigation/native-stack";
+import CreateNote from "./Pages/CreateNote";
+import NotesOverview from "./Pages/NotesOverview";
+import NoteDetails from "./Pages/NoteDetails";
+import DeleteNote from "./Pages/DeleteNode";
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    return (
+        <NavigationContainer>
+            <Stack.Navigator>
+                <Stack.Screen name="Noter" component={NotesOverview} />
+                <Stack.Screen name="Create note" component={CreateNote} />
+                <Stack.Screen name="Note details" component={NoteDetails} />
+                <Stack.Screen name="Delete note" component={DeleteNote} />
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+
+
