@@ -51,19 +51,19 @@ const createItem = (title, content, logoUri = "") => {
 }
 
 // For reset purposes. Not used in code
-export const clearNotes = async () => {
+export const clear = async () => {
     await FileSystem.deleteAsync(FILEPATH)
 }
 
-export const getAllNotes = async () => await fetchNotes()
+export const all = async () => await fetchNotes()
 
-export const removeNoteById = async id => {
+export const removeById = async id => {
     const notes = await fetchNotes()
     const filtered = notes.filter(n => n.id !== id)
     await persistNotes(filtered)
 }
 
-export const saveNote = async (title, content, logoUri = "") => {
+export const save = async (title, content, logoUri = "") => {
     const data = await fetchNotes()
     const item = createItem(title,content,logoUri)
     data.push(item)

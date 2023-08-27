@@ -1,14 +1,9 @@
 import {Button, FlatList, StyleSheet, Text, View} from "react-native";
-
 import {useState} from "react";
-import {getAllNotes} from "../Notes/Notes";
-
-
-const fetch = async () => await getAllNotes()
-
+import {getAllNotes} from "../Notes/NotesInterface";
 export default function NotesOverview({navigation}){
     const [notesData, setNotesData] = useState([])
-    fetch().then(notes => setNotesData(notes))
+    getAllNotes().then(notes => setNotesData(notes))
     
     const renderItem = item => (
         <View style={styles.itemContainer}>

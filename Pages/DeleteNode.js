@@ -1,5 +1,5 @@
 import {Button, StyleSheet, Text, View} from "react-native";
-import {removeNoteById} from "../Notes/Notes";
+import {removeNoteById} from "../Notes/NotesInterface";
 
 export default function DeleteNote({route,navigation}){
     const note = route.params.note

@@ -1,6 +1,4 @@
 import {StyleSheet, View, Text} from "react-native";
-import React, {useState} from "react";
-
 export default function NoteDetails({route,navigation}){
     const note = route.params.note
     

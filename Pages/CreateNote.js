@@ -1,8 +1,8 @@
 import {Button, TextInput, View} from "react-native";
 import {StyleSheet,Text} from "react-native";
 import {useState} from "react";
-import {saveNote} from "../Notes/Notes";
 import {launchCamera, pickImage} from "../Components/IODevices/Camera/images";
+import {saveNote} from "../Notes/NotesInterface";
 
 export default function CreateNote({navigation}){
     const [title, titleChanged] = useState("Title")

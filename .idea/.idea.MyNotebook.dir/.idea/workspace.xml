@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="651d8a48-b5af-45a8-9c95-d5664dcc9066" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.MyNotebook.dir/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.MyNotebook.dir/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Notes/NotesInterface.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notes/Notes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/NotesJsonFileStorage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/CreateNote.js" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/CreateNote.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/DeleteNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/DeleteNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/NoteDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/NoteDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/NotesOverview.js" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/NotesOverview.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2UZInYn1Fz1lTDyzA69cEbW8nrv" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/mh/GitRepos/MyNotebook&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/home/mh/.config/JetBrains/Rider2023.2/resharper-host/DecompilerCache&quot;,
+      &quot;/home/mh/.config/JetBrains/Rider2023.2/resharper-host/SourcesCache&quot;,
+      &quot;/home/mh/.local/share/Symbols/src&quot;
+    ]
+  }
+}</component>
+  <component name="RunManager" selected="Native Executable.Android emulator">
+    <configuration name="Android emulator" type="RunNativeExe" factoryName="Native Executable">
+      <option name="EXE_PATH" value="/usr/bin/npm" />
+      <option name="PROGRAM_PARAMETERS" value="run android" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Expo Go" type="RunNativeExe" factoryName="Native Executable">
+      <option name="EXE_PATH" value="/usr/bin/npx" />
+      <option name="PROGRAM_PARAMETERS" value="expo start" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Native Executable.Android emulator" />
+      <item itemvalue="Native Executable.Expo Go" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="651d8a48-b5af-45a8-9c95-d5664dcc9066" name="Changes" comment="" />
+      <created>1693140848568</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1693140848568</updated>
+      <workItem from="1693140850414" duration="1327000" />
+      <workItem from="1693142319104" duration="438000" />
+      <workItem from="1693142952864" duration="2727000" />
+      <workItem from="1693146115392" duration="1031000" />
+      <workItem from="1693147442573" duration="249000" />
+      <workItem from="1693147921211" duration="208000" />
+      <workItem from="1693148263499" duration="213000" />
+      <workItem from="1693149541648" duration="795000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
