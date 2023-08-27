@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="651d8a48-b5af-45a8-9c95-d5664dcc9066" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MyNotebook.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MyNotebook.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notes/NotesGoogleFirebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/NotesGoogleFirebase.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notes/NotesInterface.js" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/NotesInterface.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notes/NotesJsonFileStorage.js" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/NotesJsonFileStorage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/NotesOverview.js" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/NotesOverview.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firebaseConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/firebaseConfig.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +65,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="Native Executable.Android emulator">
+  <component name="RunManager" selected="Native Executable.Expo Go">
     <configuration name="Android emulator" type="RunNativeExe" factoryName="Native Executable">
       <option name="EXE_PATH" value="/usr/bin/npm" />
       <option name="PROGRAM_PARAMETERS" value="run android" />
@@ -115,6 +109,7 @@
       <workItem from="1693160377624" duration="4405000" />
       <workItem from="1693164814536" duration="605000" />
       <workItem from="1693172999777" duration="4916000" />
+      <workItem from="1693178654373" duration="1028000" />
     </task>
     <servers />
   </component>
