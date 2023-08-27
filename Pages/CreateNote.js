@@ -1,5 +1,5 @@
 import {Button, TextInput, View} from "react-native";
-import {StyleSheet} from "react-native";
+import {StyleSheet,Text} from "react-native";
 import {useState} from "react";
 import {saveNote} from "../Notes/Notes";
 import {launchCamera, pickImage} from "../Components/IODevices/Camera/images";
@@ -7,6 +7,10 @@ import {launchCamera, pickImage} from "../Components/IODevices/Camera/images";
 export default function CreateNote({navigation}){
     const [title, titleChanged] = useState("Title")
     const [content, contentChanged] = useState("Content")
+    const [imageCaptured, setImageCaptured] = useState(false)
+    
+    let imageUri = ""
+    
     
     const handleSaveClicked = async () => {
         console.log(`Title: ${title} Content: ${content}`)
@@ -14,13 +18,37 @@ export default function CreateNote({navigation}){
         navigation.goBack()
     }
     
+    const captureImage = async () => {
+        const result = await launchCamera()
+        if(result){
+            setImageCaptured(true)
+            imageUri = result
+        }
+    }
+
+    const imageSelectGroup = () => {
+        if(imageCaptured){
+            return (
+                <Button title={"Fortryd billede"} onPress={() => {
+                    imageUri = ""
+                    setImageCaptured(false)
+                }}/>
+        )
+        }
+        else {
+            return (
+                <Button title={"Vælg billed"} onPress={captureImage}/>
+            )
+        }
+    }
+    
     return (
         <View style={styles.container}>
             <TextInput onChangeText={titleChanged} style={styles.titleInput} placeholder={"Title"}/>
             <TextInput onChangeText={contentChanged} multiline editable style={styles.contentInput} placeholder={"Content"}/>
             <View style={styles.buttonGroup}>
-                <Button title={"Vælg billed"} onPress={launchCamera}/>
-                <Button title={"Gem"} onPress={async () => await handleSaveClicked()}></Button>
+                {imageSelectGroup()}
+                <Button title={"Gem"} onPress={handleSaveClicked}></Button>
             </View>
         </View>
     )
@@ -51,6 +79,9 @@ const styles = StyleSheet.create({
         textAlignVertical: "top",
         backgroundColor: "white",
         minHeight: 256
+    },
+    imageSelectGroup: {
+        flexDirection: "row"
     },
     buttonGroup: {
         flexDirection: "row",

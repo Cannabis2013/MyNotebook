@@ -18,5 +18,5 @@ export const launchCamera = async () => {
     const result = await launchCameraAsync()
     if(!result.canceled)
         return result.assets[0].uri
-    return ""
+    return undefined
 }

@@ -8,25 +8,22 @@ const initialData = [
     {
         title: "Fysik noter",
         content: "Gud spiller ikke terninger",
+        logoUri: "",
         id: Uuid()
     },
     {
         title: "Matematik noter",
         content: "i^2 = -1",
+        logoUri: "",
         id: Uuid()
     },
     {
         title:"Historie noter",
+        logoUri: "",
         content: "Kong Volmer var konge i 1433",
         id: Uuid()
     }
 ]
-
-// For reset purposes. Not used in code
-export const clearNotes = async () => {
-    await FileSystem.deleteAsync(FILEPATH)
-}
-
 const persistNotes = async (notes = undefined) => {
     const data = notes ? notes : initialData
     await FileSystem.writeAsStringAsync(FILEPATH, JSON.stringify(data))
@@ -39,18 +36,23 @@ const persistNotes = async (notes = undefined) => {
 
 const fetchNotes = async () => {
     const data = await FileSystem.readAsStringAsync(FILEPATH).catch(async err => {
-        console.log(err)
         return await persistNotes() ? initialData : []
     })
     return JSON.parse(data)
 }
 
-const createItem = (title, content) => {
+const createItem = (title, content, logoUri = "") => {
     return {
         title,
         content,
+        logoUri,
         id : Uuid()
     }
+}
+
+// For reset purposes. Not used in code
+export const clearNotes = async () => {
+    await FileSystem.deleteAsync(FILEPATH)
 }
 
 export const getAllNotes = async () => await fetchNotes()
@@ -61,12 +63,10 @@ export const removeNoteById = async id => {
     await persistNotes(filtered)
 }
 
-export const saveNote = async (title, content, imageUri = "") => {
+export const saveNote = async (title, content, logoUri = "") => {
     const data = await fetchNotes()
-    const item = createItem(title,content)
-    console.log(item)
+    const item = createItem(title,content,logoUri)
     data.push(item)
-    console.log(data)
     return persistNotes(data)
 }
 
