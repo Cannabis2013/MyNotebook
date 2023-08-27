@@ -8,6 +8,7 @@
 * Functionality fully supported
   * Add new note
   * See all notes
+  * See a single note
   * Delete a single note
 * Functionality partly supported
   * Image capturing for storing images
