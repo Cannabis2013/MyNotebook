@@ -1,6 +1,6 @@
 import * as LocalNotes from "./NotesJsonFileStorage"
-
-const Notes = LocalNotes
+import * as FirebaseNotes from "./NotesGoogleFirebase"
+const Notes = FirebaseNotes
 
 // For reset purposes. Not used in code
 export const clearNotes = async () => await Notes.clear()

@@ -19,6 +19,8 @@ const styles = StyleSheet.create({
         padding: 12
     },
     noteTitle: {
-        fontSize: 24
+        fontSize: 24,
+        borderBottomWidth: 1,
+        marginBottom: 6
     }
 })

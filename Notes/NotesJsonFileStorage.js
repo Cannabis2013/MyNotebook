@@ -3,27 +3,6 @@ import * as FileSystem from "expo-file-system"
 const FILEPATH = `${FileSystem.documentDirectory}notes.json`
 
 import { v4 as Uuid } from 'uuid';
-
-const initialData = [
-    {
-        title: "Fysik noter",
-        content: "Gud spiller ikke terninger",
-        logoUri: "",
-        id: Uuid()
-    },
-    {
-        title: "Matematik noter",
-        content: "i^2 = -1",
-        logoUri: "",
-        id: Uuid()
-    },
-    {
-        title:"Historie noter",
-        logoUri: "",
-        content: "Kong Volmer var konge i 1433",
-        id: Uuid()
-    }
-]
 const persistNotes = async (notes = undefined) => {
     const data = notes ? notes : initialData
     await FileSystem.writeAsStringAsync(FILEPATH, JSON.stringify(data))
@@ -36,7 +15,8 @@ const persistNotes = async (notes = undefined) => {
 
 const fetchNotes = async () => {
     const data = await FileSystem.readAsStringAsync(FILEPATH).catch(async err => {
-        return await persistNotes() ? initialData : []
+        await persistNotes()
+        return []
     })
     return JSON.parse(data)
 }
