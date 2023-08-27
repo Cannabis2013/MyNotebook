@@ -1,5 +1,9 @@
 ># MyNotebook
 >## Developed by: Martin Hansen
+>## Short description
+> A small student project developed with React Native using Google Firebase
+>## Target platform
+> Android
 > 
 * Functionality fully supported
   * Add new note
