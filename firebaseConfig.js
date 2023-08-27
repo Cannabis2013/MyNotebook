@@ -1,16 +1,7 @@
 import { initializeApp } from 'firebase/app';
-import {getFirestore} from "@firebase/firestore";
-
-// Optionally import the services that you want to use
-// import {...} from "firebase/auth";
-// import {...} from "firebase/database";
-// import {...} from "firebase/firestore";
-// import {...} from "firebase/functions";
-// import {...} from "firebase/storage";
 
 export const initFirestore = () => {
     // Initialize Firebase
-    console.log("Firebase config called")
     const firebaseConfig = {
         apiKey: 'AIzaSyDE0OpL5SzRpClCJE4jcAyT8JQFgbqIO1s',
         authDomain: 'mynotebook-d9b39.firebaseapp.com',
@@ -22,8 +13,7 @@ export const initFirestore = () => {
         measurementId: 'G-measurement-id',
     };
 
-    const app = initializeApp(firebaseConfig);
+    return initializeApp(firebaseConfig);
     // For more information on how to access Firebase in your project,
     // see the Firebase documentation: https://firebase.google.com/docs/web/setup#access-firebase
-    return  getFirestore()
 }

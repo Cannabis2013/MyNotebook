@@ -9,7 +9,7 @@
       <change beforePath="$PROJECT_DIR$/Notes/NotesGoogleFirebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/NotesGoogleFirebase.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Notes/NotesInterface.js" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/NotesInterface.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Notes/NotesJsonFileStorage.js" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/NotesJsonFileStorage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/NoteDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/NoteDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/NotesOverview.js" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/NotesOverview.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/firebaseConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/firebaseConfig.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
@@ -26,8 +26,15 @@
       </list>
     </option>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/node_modules/@babel/core/lib/config/full.js.map" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/package-lock.json" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -53,7 +60,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/mh/AppData/JetBrains Rider-2022.1.2/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/mh/ApplicationsData/JetBrains Rider-2020.3.4/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -107,6 +114,7 @@
       <workItem from="1693160296261" duration="36000" />
       <workItem from="1693160377624" duration="4405000" />
       <workItem from="1693164814536" duration="605000" />
+      <workItem from="1693172999777" duration="4916000" />
     </task>
     <servers />
   </component>

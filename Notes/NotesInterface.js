@@ -1,5 +1,6 @@
 import * as LocalNotes from "./NotesJsonFileStorage"
 import * as FirebaseNotes from "./NotesGoogleFirebase"
+
 const Notes = FirebaseNotes
 
 // For reset purposes. Not used in code

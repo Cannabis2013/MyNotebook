@@ -1,10 +1,12 @@
 import * as FileSystem from "expo-file-system"
 
+console.log("Local files is the best")
+
 const FILEPATH = `${FileSystem.documentDirectory}notes.json`
 
 import { v4 as Uuid } from 'uuid';
 const persistNotes = async (notes = undefined) => {
-    const data = notes ? notes : initialData
+    const data = notes ? notes : []
     await FileSystem.writeAsStringAsync(FILEPATH, JSON.stringify(data))
         .catch(err => {
             console.log(err)

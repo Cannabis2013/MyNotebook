@@ -1,6 +1,7 @@
 import {Button, FlatList, StyleSheet, Text, View} from "react-native";
 import {useState} from "react";
 import {getAllNotes} from "../Notes/NotesInterface";
+
 export default function NotesOverview({navigation}){
     const [notesData, setNotesData] = useState([])
     getAllNotes().then(notes => setNotesData(notes))
