@@ -4,7 +4,6 @@ import {getAllNotes} from "../Notes/NotesInterface";
 export default function NotesOverview({navigation}){
     const [notesData, setNotesData] = useState([])
     getAllNotes().then(notes => setNotesData(notes))
-    
     const renderItem = item => (
         <View style={styles.itemContainer}>
             <Text style={styles.item} onPress={() => navigation.navigate("Note details",{
