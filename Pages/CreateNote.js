@@ -8,13 +8,12 @@ export default function CreateNote({navigation}){
     const [title, titleChanged] = useState("Title")
     const [content, contentChanged] = useState("Content")
     const [imageCaptured, setImageCaptured] = useState(false)
-    
-    let imageUri = ""
-    
+    const [imageUri,setImageUri] = useState("")
     
     const handleSaveClicked = async () => {
         console.log(`Title: ${title} Content: ${content}`)
-        await saveNote(title,content)
+        console.log(imageUri)
+        await saveNote(title,content, imageUri)
         navigation.goBack()
     }
     
@@ -22,7 +21,7 @@ export default function CreateNote({navigation}){
         const result = await launchCamera()
         if(result){
             setImageCaptured(true)
-            imageUri = result
+            setImageUri(result)
         }
     }
 

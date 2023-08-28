@@ -4,7 +4,6 @@ import {addDoc, collection, deleteDoc, getDocs, getFirestore} from "@firebase/fi
 const app = initFirestore()
 const db = getFirestore(app)
 
-
 const colletionName = 'UserNotes'
 
 const createItem = (title, content, logoUri = "") => {

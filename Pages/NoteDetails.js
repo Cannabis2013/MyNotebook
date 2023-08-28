@@ -1,11 +1,28 @@
-import {StyleSheet, View, Text} from "react-native";
+import {StyleSheet, View, Text, Image} from "react-native";
 export default function NoteDetails({route,navigation}){
     const note = route.params.note
+    
+    const showImage = () => {
+        if(note.logoUri !== ""){
+            return (
+                <Image source={{
+                    uri: note.logoUri
+                }} width={256} height={256}></Image>
+            )
+        }
+        else
+            return (
+                <Text>Intet billede at vise</Text>
+            )
+    }
     
     return (
         <View style={styles.container}>
             <Text style={styles.noteTitle} >{note.title}</Text>
-            <Text>{note.content}</Text>
+            <Text style={styles.noteContent}>{note.content}</Text>
+            <View style={styles.imageGroup}>
+                {showImage()}
+            </View>
         </View>
     )
 }
@@ -22,5 +39,14 @@ const styles = StyleSheet.create({
         fontSize: 24,
         borderBottomWidth: 1,
         marginBottom: 6
+    },
+    noteContent: {
+        minHeight: 128
+    },
+    imageGroup: {
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center",
+        width: "100%"
     }
 })
