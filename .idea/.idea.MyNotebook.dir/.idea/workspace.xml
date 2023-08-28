@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="651d8a48-b5af-45a8-9c95-d5664dcc9066" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MyNotebook.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MyNotebook.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notes/NotesGoogleFirebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/NotesGoogleFirebase.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notes/NotesInterface.js" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/NotesInterface.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/CreateNote.js" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/CreateNote.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/NoteDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/NoteDetails.js" afterDir="false" />
-    </list>
+    <list default="true" id="651d8a48-b5af-45a8-9c95-d5664dcc9066" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
