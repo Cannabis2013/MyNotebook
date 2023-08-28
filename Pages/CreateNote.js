@@ -28,8 +28,8 @@ export default function CreateNote({navigation}){
     const imageSelectGroup = () => {
         if(imageCaptured){
             return (
-                <Button title={"Fortryd billede"} onPress={() => {
-                    imageUri = ""
+                <Button color={"red"} title={"Fortryd billede"} onPress={() => {
+                    setImageUri("")
                     setImageCaptured(false)
                 }}/>
         )

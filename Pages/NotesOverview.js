@@ -5,11 +5,21 @@ import {getAllNotes} from "../Notes/NotesInterface";
 export default function NotesOverview({navigation}){
     const [notesData, setNotesData] = useState([])
     getAllNotes().then(notes => setNotesData(notes))
+    
+    const formatTitle = (title) => {
+        const maxLength = 15
+        if(title.length > maxLength)
+        {
+            const cropped = title.substring(0,maxLength)
+            return cropped + ".."
+        }
+        return title
+    }
     const renderItem = item => (
         <View style={styles.itemContainer}>
             <Text style={styles.item} onPress={() => navigation.navigate("Note details",{
                 note: item
-            })}>{item.title}</Text>
+            })}>{formatTitle(item.title)}</Text>
             <View style={styles.deleteButton}>
                 <Button color={"red"} title={"Slet"} onPress={() => navigation.navigate("Delete note",{
                     note: item

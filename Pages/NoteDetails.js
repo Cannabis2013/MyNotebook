@@ -1,14 +1,15 @@
 import {StyleSheet, View, Text, Image} from "react-native";
-export default function NoteDetails({route,navigation}){
+export default function NoteDetails({route}){
     const note = route.params.note
+    const image = () => {
+        return (
+            <Image id={"noteLogo"}  source={{uri: note.logoUri}} width={256} height={256}/>
+        )
+    }
     
     const showImage = () => {
         if(note.logoUri !== ""){
-            return (
-                <Image source={{
-                    uri: note.logoUri
-                }} width={256} height={256}></Image>
-            )
+            return image()
         }
         else
             return (
@@ -42,6 +43,11 @@ const styles = StyleSheet.create({
     },
     noteContent: {
         minHeight: 128
+    },
+    imageLogo: {
+        position: "absolute",
+        left: 20,
+        top: 150
     },
     imageGroup: {
         flex: 1,

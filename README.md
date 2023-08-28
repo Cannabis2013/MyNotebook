@@ -10,7 +10,6 @@
   * See all notes
   * See a single note
   * Delete a single note
-* Functionality partly supported
   * Image capturing for storing images
 * Technologies/packages
   * Expo-File-System
@@ -25,6 +24,5 @@
 
 ># For next iteration
 > * Google Firebase authentication
->   * Show saved images in note details page
 >   * Restrict access to Firebase services
->   * User login
+>   * Identity and auth
