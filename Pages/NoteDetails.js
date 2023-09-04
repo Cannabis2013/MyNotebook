@@ -21,9 +21,7 @@ export default function NoteDetails({route}){
         <View style={styles.container}>
             <Text style={styles.noteTitle} >{note.title}</Text>
             <Text style={styles.noteContent}>{note.content}</Text>
-            <View style={styles.imageGroup}>
-                {showImage()}
-            </View>
+            {showImage()}
         </View>
     )
 }

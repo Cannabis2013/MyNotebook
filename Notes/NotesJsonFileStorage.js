@@ -1,11 +1,9 @@
 import * as FileSystem from "expo-file-system"
-
-console.log("Local files is the best")
+import { v4 as Uuid } from 'uuid';
 
 const FILEPATH = `${FileSystem.documentDirectory}notes.json`
 
-import { v4 as Uuid } from 'uuid';
-const persistNotes = async (notes = undefined) => {
+const persistNotes = async (notes) => {
     const data = notes ? notes : []
     await FileSystem.writeAsStringAsync(FILEPATH, JSON.stringify(data))
         .catch(err => {
@@ -32,11 +30,6 @@ const createItem = (title, content, logoUri = "") => {
     }
 }
 
-// For reset purposes. Not used in code
-export const clear = async () => {
-    await FileSystem.deleteAsync(FILEPATH)
-}
-
 export const all = async () => await fetchNotes()
 
 export const removeById = async id => {
@@ -45,10 +38,11 @@ export const removeById = async id => {
     await persistNotes(filtered)
 }
 
-export const save = async (title, content, logoUri = "") => {
+export const save = async (title, content, logoUri = "", completeHandler) => {
     const data = await fetchNotes()
     const item = createItem(title,content,logoUri)
     data.push(item)
-    return persistNotes(data)
+    await persistNotes(data)
+    completeHandler()
 }
 

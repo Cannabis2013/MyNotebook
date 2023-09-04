@@ -3,6 +3,7 @@ import {StyleSheet,Text} from "react-native";
 import {useState} from "react";
 import {launchCamera, pickImage} from "../Components/IODevices/Camera/images";
 import {saveNote} from "../Notes/NotesInterface";
+import {uploadToStorage} from "../IOOperations/imageBlob";
 
 export default function CreateNote({navigation}){
     const [title, titleChanged] = useState("Title")
@@ -11,10 +12,9 @@ export default function CreateNote({navigation}){
     const [imageUri,setImageUri] = useState("")
     
     const handleSaveClicked = async () => {
-        console.log(`Title: ${title} Content: ${content}`)
-        console.log(imageUri)
-        await saveNote(title,content, imageUri)
-        navigation.goBack()
+        await saveNote(title,content, imageUri,() => {
+            navigation.goBack()
+        })
     }
     
     const captureImage = async () => {

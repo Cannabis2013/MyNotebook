@@ -1,19 +1,23 @@
-import { initializeApp } from 'firebase/app';
+import "firebase/compat/storage"
+import {initializeApp} from "firebase/app";
 
-export const initFirestore = () => {
+let app = undefined
+
+export const createFirebaseApp = () => {
+    if(app)
+        return app
     // Initialize Firebase
     const firebaseConfig = {
-        apiKey: 'AIzaSyDE0OpL5SzRpClCJE4jcAyT8JQFgbqIO1s',
-        authDomain: 'mynotebook-d9b39.firebaseapp.com',
-        databaseURL: 'https://project-id.firebaseio.com',
-        projectId: 'mynotebook-d9b39',
-        storageBucket: 'mynotebook-d9b39.appspot.com',
-        messagingSenderId: '15468578934-uvo1rs0q8q4vfd32ave4l4mqbeq5ijoa.apps.googleusercontent.com',
-        appId: '1:15468578934:android:8b19a424343438424a7757',
-        measurementId: 'G-measurement-id',
+        databaseURL: 'https://mynotebook-b0a5b.firebaseio.com',
+        apiKey: "AIzaSyB_Nfq9BCmOO6QWCgJcRLNTqE3oZNs9N48",
+        authDomain: "mynotebook-b0a5b.firebaseapp.com",
+        projectId: "mynotebook-b0a5b",
+        storageBucket: "mynotebook-b0a5b.appspot.com",
+        messagingSenderId: "1020688796627",
+        appId: "1:1020688796627:web:afd791b0f67ceace183d26"
     };
-
-    return initializeApp(firebaseConfig);
+    app = initializeApp(firebaseConfig);
+    return app
     // For more information on how to access Firebase in your project,
     // see the Firebase documentation: https://firebase.google.com/docs/web/setup#access-firebase
 }

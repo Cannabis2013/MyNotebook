@@ -1,7 +1,9 @@
-import {initFirestore} from "../firebaseConfig";
+import {createFirebaseApp} from "../firebaseConfig";
 import {addDoc, collection, deleteDoc, getDocs, getFirestore} from "@firebase/firestore/lite";
+import {uploadToStorage} from "../IOOperations/Storage/imageBlob";
 
-const app = initFirestore()
+
+const app = createFirebaseApp()
 const db = getFirestore(app)
 
 const colletionName = 'UserNotes'
@@ -40,10 +42,11 @@ export const removeById = async id => {
         })
 }
 
-export const save = async (title, content, logoUri = "") => {
-    const colRef = collection(db,colletionName)
-    const docsRef = await getDocs(colRef)
-    await addDoc(colRef, createItem(title,content,logoUri))
-        .catch(err => console.log(err))
-    return true
+export const save = async (title, content, logoUri = "", completedRef) => {
+     await uploadToStorage(logoUri,() => {}, async (uri) => {
+        const colRef = collection(db,colletionName)
+        await addDoc(colRef, createItem(title,content,uri))
+            .catch(err => console.log(err))
+         completedRef()
+    })
 }
