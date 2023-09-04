@@ -1,10 +1,33 @@
 import {Button, FlatList, StyleSheet, Text, View} from "react-native";
 import {useState} from "react";
 import {getAllNotes} from "../Notes/NotesInterface";
+import {useFocusEffect} from "@react-navigation/native";
+
+let needsFetching = true
+
+const resetFetchStatus = () => {
+    setTimeout(() => {
+        needsFetching = true
+    },500)
+}
 
 export default function NotesOverview({navigation}){
     const [notesData, setNotesData] = useState([])
-    getAllNotes().then(notes => setNotesData(notes))
+    
+    const fetchNotes = () => {
+        if(needsFetching){
+            needsFetching = false
+            getAllNotes().then(notes => {
+                resetFetchStatus()
+                setNotesData(notes)
+            })
+        }
+    }
+    
+    useFocusEffect(() => {
+        if(needsFetching)
+            fetchNotes()
+    })
     
     const formatTitle = (title) => {
         const maxLength = 15

@@ -1,7 +1,7 @@
 import * as LocalNotes from "./NotesJsonFileStorage"
 import * as FirebaseNotes from "./NotesGoogleFirebase"
 
-const storageProvider = FirebaseNotes
+const storageProvider = LocalNotes
 
 export const getAllNotes = async () => await storageProvider.all()
 export const removeNoteById = async id => await storageProvider.removeById(id)

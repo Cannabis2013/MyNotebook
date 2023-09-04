@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="651d8a48-b5af-45a8-9c95-d5664dcc9066" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MyNotebook.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MyNotebook.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IOOperations/Storage/imageBlob.js" beforeDir="false" afterPath="$PROJECT_DIR$/IOOperations/Storage/imageBlob.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/CreateNote.js" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/CreateNote.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notes/NotesInterface.js" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/NotesInterface.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/NotesOverview.js" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/NotesOverview.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +66,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="Native Executable.Expo Go">
+  <component name="RunManager" selected="Native Executable.Android emulator">
     <configuration name="Android emulator" type="RunNativeExe" factoryName="Native Executable">
       <option name="EXE_PATH" value="/usr/bin/npm" />
       <option name="PROGRAM_PARAMETERS" value="run android" />
