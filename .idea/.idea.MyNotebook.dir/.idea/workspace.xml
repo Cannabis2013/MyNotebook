@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="651d8a48-b5af-45a8-9c95-d5664dcc9066" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/IOOperations/Storage/imageBlob.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MyNotebook.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MyNotebook.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notes/NotesGoogleFirebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/NotesGoogleFirebase.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notes/NotesInterface.js" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/NotesInterface.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notes/NotesJsonFileStorage.js" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/NotesJsonFileStorage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOOperations/Storage/imageBlob.js" beforeDir="false" afterPath="$PROJECT_DIR$/IOOperations/Storage/imageBlob.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pages/CreateNote.js" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/CreateNote.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/NoteDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/NoteDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firebaseConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/firebaseConfig.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +66,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="Native Executable.Android emulator">
+  <component name="RunManager" selected="Native Executable.Expo Go">
     <configuration name="Android emulator" type="RunNativeExe" factoryName="Native Executable">
       <option name="EXE_PATH" value="/usr/bin/npm" />
       <option name="PROGRAM_PARAMETERS" value="run android" />
@@ -124,6 +117,7 @@
       <workItem from="1693242511281" duration="1160000" />
       <workItem from="1693816966522" duration="9181000" />
       <workItem from="1693828479649" duration="39000" />
+      <workItem from="1693835711512" duration="824000" />
     </task>
     <servers />
   </component>

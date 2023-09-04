@@ -1,11 +1,12 @@
-import {createFirebaseApp} from "../firebaseConfig";
+import {createFirebaseApp} from "../../firebaseConfig";
 import {getDownloadURL, getStorage, ref, uploadBytes} from "@firebase/storage";
 
 const app = createFirebaseApp()
 const storage = getStorage(app)
 
+const fetchAlternative = async (uri) => await fetch(uri)
 const fetchBlob = async (uri) => {
-    const blob = await new Promise((resolve, reject) => {
+    return await new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest();
         xhr.onload = function () {
             resolve(xhr.response);
@@ -17,8 +18,6 @@ const fetchBlob = async (uri) => {
         xhr.open("GET", uri, true);
         xhr.send(null);
     });
-
-    return blob;
 };
 
 
