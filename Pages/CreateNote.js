@@ -1,5 +1,5 @@
 import {Button, TextInput, View} from "react-native";
-import {StyleSheet,Text} from "react-native";
+import {StyleSheet} from "react-native";
 import {useState} from "react";
 import {launchCamera} from "../Components/IODevices/Camera/images";
 import {saveNote} from "../Notes/NotesInterface";

@@ -5,20 +5,14 @@ import {useFocusEffect} from "@react-navigation/native";
 
 let needsFetching = true
 
-const resetFetchStatus = () => {
-    setTimeout(() => {
-        needsFetching = true
-    },500)
-}
-
 export default function NotesOverview({navigation}){
     const [notesData, setNotesData] = useState([])
     
-    const fetchNotes = () => {
+    const fetchNotes =  () => {
         if(needsFetching){
-            needsFetching = false
+            console.log("Fetching initialized")
             getAllNotes().then(notes => {
-                resetFetchStatus()
+                needsFetching = false
                 setNotesData(notes)
             })
         }
@@ -38,15 +32,20 @@ export default function NotesOverview({navigation}){
         }
         return title
     }
+    
+    const redirectTo = (pageName, prop) => {
+        needsFetching = true
+        navigation.navigate(pageName,prop)
+    }
+    
     const renderItem = item => (
         <View style={styles.itemContainer}>
             <Text style={styles.item} onPress={() => navigation.navigate("Note details",{
                 note: item
             })}>{formatTitle(item.title)}</Text>
             <View style={styles.deleteButton}>
-                <Button color={"red"} title={"Slet"} onPress={() => navigation.navigate("Delete note",{
-                    note: item
-                })}/>
+                <Button color={"red"} title={"Slet"} onPress={() => redirectTo("Delete note", 
+                    {note : item})}/>
             </View>
         </View>
     )
@@ -54,7 +53,7 @@ export default function NotesOverview({navigation}){
     return (
         <View style={styles.container}>
             <View style={styles.buttonLayout}>
-                <Button title={"Opret"} color={"green"} onPress={() => navigation.navigate("Create note")}/>
+                <Button title={"Opret"} color={"green"} onPress={() => redirectTo("Create note")}/>
             </View>
             <FlatList id={"notesListView"} style={styles.listView}
                       data={notesData}
