@@ -28,6 +28,9 @@ Android
   * Google Firebase authentication
     * For user signup and signin
 # Running requirements
+To avoid repetetive credentials entering i'm using hardcoded credentials provided by a file *authCredentials.js*. When implemented correctly, all you have to do on
+the signin page, is clicking ok. This is done for obviosly security reasons in the case using a password used elsewhere. 
+
 In order to run successfully you must create a file *authCredentials.js* and put it in a folder *Credentials* in the root folder.  
 
 *authCredentials.js*  
@@ -36,6 +39,8 @@ In order to run successfully you must create a file *authCredentials.js* and put
 export const authUsername = "{Username}"
 export const authPassword = "{Password}"
 ```
+
+
 
 # Report
 
