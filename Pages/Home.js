@@ -14,13 +14,13 @@ export default function HomePage({ navigation }) {
     function renderTitle(title, tileImage, pressHandler) {
         const imageUrl = tileImage ?? ""
         return (
-            <View style={{ width: 192, height: 192, backgroundColor: "rgba(0,0,180,0.3)", }}>
+            <View style={{ padding: 8,width: 128, height: 128, backgroundColor: "rgba(0,0,180,0.3)", }}>
                 <TouchableOpacity onPress={pressHandler}>
-                    <Text style={{ color: "black", fontWeight: "bold", fontSize: 28, marginLeft: 12, marginTop: 12 }}>
+                    <Text style={{ color: "black", fontWeight: "bold", fontSize: 20 }}>
                         {title}
                     </Text>
-                    <View style={{ height: 135, width: 192,justifyContent: "center",alignItems: "center" }}>
-                        <Image  source={imageUrl} style={{ height: 128, width:128 }}></Image>
+                    <View style={{ height: 85, width: "100%",justifyContent: "center",alignItems: "center" }}>
+                        <Image  source={imageUrl} style={{ height: 70, width: 70 }}></Image>
                     </View>
                 </TouchableOpacity>
             </View>
