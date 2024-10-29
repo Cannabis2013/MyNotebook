@@ -31,7 +31,9 @@ function StackView() {
     function signedInBody() {
         return (
             <>
-                <Stack.Screen name="Notes Menu" component={HomePage} />
+                <Stack.Screen name="Notes Menu" component={HomePage} options={{
+                    headerShown: false
+                }}/>
                 <Stack.Screen name="Notes List" component={NotesListView} />
                 <Stack.Screen name="Create note" component={CreateNote} />
                 <Stack.Screen name="Notes Map" component={NotesMapView}/>

@@ -1,17 +1,44 @@
-import { Button, StyleSheet, View } from "react-native";
+import { Button, Image, StyleSheet, View, Text } from "react-native";
 import { signOut } from "../Services/Auth/auth-firebase";
+import { TouchableOpacity } from "react-native";
 
-export default function HomePage({navigation}){
-    function navigateTo(route){
+const listLogoUri = require("../assets/list.png")
+const mapLogoUri = require("../assets/map.png")
+const signOutLogoUri = require("../assets/signout.png")
+const createLogoUri = require("../assets/create.png")
+export default function HomePage({ navigation }) {
+    function navigateTo(route) {
         navigation.navigate(route)
+    }
+
+    function renderTitle(title, tileImage, pressHandler) {
+        const imageUrl = tileImage ?? ""
+        return (
+            <View style={{ width: 192, height: 192, backgroundColor: "rgba(0,0,180,0.3)", }}>
+                <TouchableOpacity onPress={pressHandler}>
+                    <Text style={{ color: "black", fontWeight: "bold", fontSize: 28, marginLeft: 12, marginTop: 12 }}>
+                        {title}
+                    </Text>
+                    <View style={{ height: 135, width: 192,justifyContent: "center",alignItems: "center" }}>
+                        <Image  source={imageUrl} style={{ height: 128, width:128 }}></Image>
+                    </View>
+                </TouchableOpacity>
+            </View>
+        )
     }
 
     return (
         <View style={styles.container}>
-            <Button title="Opret note" onPress={() => navigateTo("Create note")} />
-            <Button title="Noter (Listeform)" onPress={() => navigateTo("Notes List")}/>
-            <Button title="Noter (Kort)" onPress={() => navigateTo("Notes Map")}/>
-            <Button title="Log ud" onPress={signOut}/>
+            <View style={styles.innerContainer}>
+                <View style={styles.collout}>
+                    {renderTitle("Opret note", createLogoUri,() => navigateTo("Create note"))}
+                    {renderTitle("Noter", listLogoUri,() => navigateTo("Notes List"))}
+                </View>
+                <View style={styles.collout}>
+                    {renderTitle("Noter", mapLogoUri,() => navigateTo("Notes Map"))}
+                    {renderTitle("Log ud", signOutLogoUri, signOut)}
+                </View>
+            </View>
         </View>
     )
 }
@@ -19,7 +46,16 @@ export default function HomePage({navigation}){
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        justifyContent: "center"
+    },
+    innerContainer: {
+        flex: 1,
         justifyContent: "center",
-        rowGap: 6
+        alignItems: "center",
+        rowGap: 2
+    },
+    collout: {
+        flexDirection: "row",
+        columnGap: 2
     }
 })
