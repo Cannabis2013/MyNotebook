@@ -1,21 +1,33 @@
-import { Animated, Button, StyleSheet, Text, View, PanResponder } from "react-native";
+import {
+    Animated, Button, StyleSheet,
+    Text, View, PanResponder, Dimensions
+} from "react-native";
 import React, { useRef, useState } from "react";
 
-export default function NoteItem({ item, clickHandler, deleteHandler}) {
-    const [x, setX] = useState(0)
-    const [isMoving,setIsMoving] = useState(true)
+export default function NoteItem({ item, clickHandler, deleteHandler }) {
+    const [x, setX] = useState(-125)
+    const [isMoving, setIsMoving] = useState(true)
+    const dx = useRef(0)
 
-    function handleMove(event,gestureState){
-        setX(gestureState.dx)
+    function handleMove(event, gestureState) {
+        dx.current = gestureState.dx - 125
+        if (dx.current <= 0 && dx.current >= -250) {
+            setX(dx.current)
+        }
+    }
+
+    function handleRelease() {
+        if (dx.current >= -5)
+            setX(0)
+        else
+            setX(-125)
     }
 
     const panResponder = useRef(
         PanResponder.create({
             onMoveShouldSetPanResponder: () => true,
             onPanResponderMove: handleMove,
-            onPanResponderRelease: function() {
-                setX(1)
-            },
+            onPanResponderRelease: handleRelease,
         }),
     ).current;
 
@@ -30,18 +42,23 @@ export default function NoteItem({ item, clickHandler, deleteHandler}) {
 
     return (
         <Animated.View
-            style={{transform: [{ translateX: x }],}}
+            style={{ flexDirection: "row", transform: [{ translateX: x }], }}
             {...panResponder.panHandlers}>
-            <View style={styles.itemContainer}>
-                <Text style={styles.itemTitle} onPress={() => clickHandler(item)}>{formatTitle(item.title)}</Text>
+            <View style={styles.deleteContainer}>
                 <View style={styles.deleteButton}>
-                    <Button color={"red"} title={"Slet"} onPress={() => deleteHandler(props.item)} />
+                    <Button color={"red"} title={"Slet"} onPress={() => deleteHandler(item)} />
                 </View>
             </View>
+            <View style={styles.itemContainer}>
+                <Text style={styles.itemTitle} onPress={() => clickHandler(item)}>{formatTitle(item.title)}</Text>
+            </View>
+            <View style={styles.deleteContainer}></View>
         </Animated.View>
 
     )
 }
+
+const sWidth = Dimensions.get("window").width
 
 const styles = StyleSheet.create({
     itemContainer: {
@@ -50,11 +67,18 @@ const styles = StyleSheet.create({
         alignItems: "center",
         padding: 6,
         backgroundColor: "beige",
-        borderBottomWidth: 1
+        borderBottomWidth: 1,
+        width: sWidth
+    },
+    deleteContainer: {
+        width: 125,
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "red"
     },
     deleteButton: {
         flex: 1,
-        maxWidth: 64,
+        width: 64,
         maxHeight: 32,
         overflow: "hidden",
         borderRadius: 12

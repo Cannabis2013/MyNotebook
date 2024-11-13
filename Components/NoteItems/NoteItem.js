@@ -1,6 +1,6 @@
 import { Button, StyleSheet, Text, View } from "react-native";
 
-export default function NoteItem(props){
+export default function NoteItem({ item, clickHandler, deleteHandler }){
     function formatTitle(title) {
         const maxLength = 15
         if (title.length > maxLength) {
@@ -12,9 +12,9 @@ export default function NoteItem(props){
     
     return (
         <View style={styles.itemContainer}>
-            <Text style={styles.itemTitle} onPress={() => props.clickHandler(props.item)}>{formatTitle(props.item.title)}</Text>
+            <Text style={styles.itemTitle} onPress={() => clickHandler(props.item)}>{formatTitle(item.title)}</Text>
             <View style={styles.deleteButton}>
-                <Button color={"red"} title={"Slet"} onPress={() => props.deleteHandler(props.item)} />
+                <Button color={"red"} title={"Slet"} onPress={() => deleteHandler(item)} />
             </View>
         </View>
     )
