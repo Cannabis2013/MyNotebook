@@ -11,7 +11,7 @@ export default function HomePage({ navigation }) {
         navigation.navigate(route)
     }
 
-    function renderTitle(title, tileImage, pressHandler) {
+    function renderTile(title, tileImage, pressHandler) {
         const imageUrl = tileImage ?? ""
         return (
             <View style={{ padding: 8,width: 128, height: 128, backgroundColor: "rgba(0,0,180,0.3)", }}>
@@ -31,12 +31,12 @@ export default function HomePage({ navigation }) {
         <View style={styles.container}>
             <View style={styles.innerContainer}>
                 <View style={styles.collout}>
-                    {renderTitle("Opret note", createLogoUri,() => navigateTo("Create note"))}
-                    {renderTitle("Noter", listLogoUri,() => navigateTo("Notes List"))}
+                    {renderTile("Opret note", createLogoUri,() => navigateTo("Create note"))}
+                    {renderTile("Noter", listLogoUri,() => navigateTo("Notes List"))}
                 </View>
                 <View style={styles.collout}>
-                    {renderTitle("Noter", mapLogoUri,() => navigateTo("Notes Map"))}
-                    {renderTitle("Log ud", signOutLogoUri, signOut)}
+                    {renderTile("Noter", mapLogoUri,() => navigateTo("Notes Map"))}
+                    {renderTile("Log ud", signOutLogoUri, signOut)}
                 </View>
             </View>
         </View>

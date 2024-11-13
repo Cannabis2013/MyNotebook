@@ -3,6 +3,7 @@ import { useState,useCallback } from "react";
 import { getAllNotes, fetchNotes } from "../Services/Notes/NotesInterface";
 import { signOut } from "../Services/Auth/notesAuth";
 import { useFocusEffect } from "@react-navigation/native";
+import NoteItem from "../Components/NoteItems/NoteGestureItem"
 
 export default function NotesListView({ navigation }) {
     const notesData = getAllNotes()
@@ -20,31 +21,16 @@ export default function NotesListView({ navigation }) {
         }).catch(handleFetchError)
     }))
 
-    function formatTitle(title) {
-        const maxLength = 15
-        if (title.length > maxLength) {
-            const cropped = title.substring(0, maxLength)
-            return cropped + ".."
-        }
-        return title
-    }
-
     function redirectTo(pageName, prop) {
         navigation.navigate(pageName, prop)
     }
 
-    function renderItem(item) {
-        return (
-            <View style={styles.itemContainer}>
-                <Text style={styles.item} onPress={() => navigation.navigate("Note details", {
-                    note: item
-                })}>{formatTitle(item.title)}</Text>
-                <View style={styles.deleteButton}>
-                    <Button color={"red"} title={"Slet"} onPress={() => redirectTo("Delete note",
-                        { note: item })} />
-                </View>
-            </View>
-        )
+    function detailsHandler(item){
+        navigation.navigate("Note details", {note: item})
+    }
+
+    function deleteItem(item){
+        redirectTo("Delete note",{ note: item })
     }
 
     return (
@@ -54,7 +40,7 @@ export default function NotesListView({ navigation }) {
             </View>
             <FlatList id={"notesListView"} style={styles.listView}
                 data={notesData}
-                renderItem={({ item }) => renderItem(item)} />
+                renderItem={({ item }) => <NoteItem item={item} clickHandler={detailsHandler} deleteHandler={deleteItem} ></NoteItem>} />
         </View>
     )
 }
