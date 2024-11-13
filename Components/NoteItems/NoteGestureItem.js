@@ -1,19 +1,14 @@
-import {
-    Animated, Button, StyleSheet,
-    Text, View, PanResponder, Dimensions
-} from "react-native";
+import { Animated, Button, StyleSheet, Text, View, PanResponder, Dimensions } from "react-native";
 import React, { useRef, useState } from "react";
 
 export default function NoteItem({ item, clickHandler, deleteHandler }) {
     const [x, setX] = useState(-125)
-    const [isMoving, setIsMoving] = useState(true)
     const dx = useRef(0)
 
     function handleMove(event, gestureState) {
         dx.current = gestureState.dx - 125
-        if (dx.current <= 0 && dx.current >= -250) {
+        if (dx.current <= 0 && dx.current > -125)
             setX(dx.current)
-        }
     }
 
     function handleRelease() {
@@ -41,8 +36,7 @@ export default function NoteItem({ item, clickHandler, deleteHandler }) {
     }
 
     return (
-        <Animated.View
-            style={{ flexDirection: "row", transform: [{ translateX: x }], }}
+        <Animated.View style={{ flexDirection: "row", transform: [{ translateX: x }], }}
             {...panResponder.panHandlers}>
             <View style={styles.deleteContainer}>
                 <View style={styles.deleteButton}>
@@ -52,7 +46,6 @@ export default function NoteItem({ item, clickHandler, deleteHandler }) {
             <View style={styles.itemContainer}>
                 <Text style={styles.itemTitle} onPress={() => clickHandler(item)}>{formatTitle(item.title)}</Text>
             </View>
-            <View style={styles.deleteContainer}></View>
         </Animated.View>
 
     )

@@ -1,42 +1,27 @@
-import { Button, Image, StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View} from "react-native";
 import { signOut } from "../Services/Auth/auth-firebase";
-import { TouchableOpacity } from "react-native";
+import IconTile from "../Components/Controls/IconTile";
 
 const listLogoUri = require("../assets/list.png")
 const mapLogoUri = require("../assets/map.png")
 const signOutLogoUri = require("../assets/signout.png")
 const createLogoUri = require("../assets/create.png")
+
 export default function HomePage({ navigation }) {
     function navigateTo(route) {
         navigation.navigate(route)
-    }
-
-    function renderTile(title, tileImage, pressHandler) {
-        const imageUrl = tileImage ?? ""
-        return (
-            <View style={{ padding: 8,width: 128, height: 128, backgroundColor: "rgba(0,0,180,0.3)", }}>
-                <TouchableOpacity onPress={pressHandler}>
-                    <Text style={{ color: "black", fontWeight: "bold", fontSize: 20 }}>
-                        {title}
-                    </Text>
-                    <View style={{ height: 85, width: "100%",justifyContent: "center",alignItems: "center" }}>
-                        <Image  source={imageUrl} style={{ height: 70, width: 70 }}></Image>
-                    </View>
-                </TouchableOpacity>
-            </View>
-        )
     }
 
     return (
         <View style={styles.container}>
             <View style={styles.innerContainer}>
                 <View style={styles.collout}>
-                    {renderTile("Opret note", createLogoUri,() => navigateTo("Create note"))}
-                    {renderTile("Noter", listLogoUri,() => navigateTo("Notes List"))}
+                    <IconTile title={"Opret note"} imageUrl={createLogoUri} pressHandler={() => navigateTo("Create note")}/>
+                    <IconTile title={"Noter"} imageUrl={listLogoUri} pressHandler={() => navigateTo("Notes List")}/>
                 </View>
                 <View style={styles.collout}>
-                    {renderTile("Noter", mapLogoUri,() => navigateTo("Notes Map"))}
-                    {renderTile("Log ud", signOutLogoUri, signOut)}
+                    <IconTile title={"Noter"} imageUrl={mapLogoUri} pressHandler={() => navigateTo("Notes Map")}/>
+                    <IconTile title={"Log ud"} imageUrl={signOutLogoUri} pressHandler={signOut}/>
                 </View>
             </View>
         </View>
