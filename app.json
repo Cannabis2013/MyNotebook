@@ -1,7 +1,8 @@
 {
   "expo": {
+    "newArchEnabled": true,
     "name": "MyNotebook",
-    "slug": "MyNotebook",
+    "slug": "MyNotebook", 
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

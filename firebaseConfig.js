@@ -1,14 +1,13 @@
 import "firebase/compat/storage"
 import { initializeApp } from "firebase/app";
 import { getStorage } from "@firebase/storage";
-import {firebaseApiKey} from "./credentials/authCredentials"
 let app = undefined
 
 export function getFirebaseApp () {
     if (app)
         return app
     const firebaseConfig = {
-        apiKey: firebaseApiKey,
+        apiKey: "AIzaSyAArLQ5T06MjjSzZXjeDp_FpwXCIJLdenM",
         authDomain: "mynotebook-6e40c.firebaseapp.com",
         projectId: "mynotebook-6e40c",
         storageBucket: "gs://mynotebook-6e40c.appspot.com",
