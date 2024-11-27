@@ -1,5 +1,6 @@
 import "firebase/compat/storage"
 import { initializeApp } from "firebase/app";
+import * as Env from "./env/firebaseEnv";
 import { getStorage } from "@firebase/storage";
 let app = undefined
 
@@ -7,12 +8,12 @@ export function getFirebaseApp () {
     if (app)
         return app
     const firebaseConfig = {
-        apiKey: "AIzaSyAArLQ5T06MjjSzZXjeDp_FpwXCIJLdenM",
-        authDomain: "mynotebook-6e40c.firebaseapp.com",
-        projectId: "mynotebook-6e40c",
-        storageBucket: "gs://mynotebook-6e40c.appspot.com",
-        messagingSenderId: "874195159834",
-        appId: "1:874195159834:web:3d9affc4b36f2aa434faa3"
+        apiKey: Env.firebaseApiKey,
+        authDomain: Env.firebaseAuthDomain,
+        projectId: Env.firebasePID,
+        storageBucket: Env.firebaseBucket,
+        messagingSenderId: Env.firebaseMsgId,
+        appId: Env.firebaseAppId
     };
     app = initializeApp(firebaseConfig);
     return app

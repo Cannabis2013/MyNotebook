@@ -20,8 +20,7 @@ const Stack = createNativeStackNavigator();
 
 initAuth()
 
-function StackView() {
-
+export default function App() {
     const [signedIn, setSignedIn] = useState(false)
 
     onSignedInChanged((status) => {
@@ -63,10 +62,6 @@ function StackView() {
             </Stack.Navigator>
         </NavigationContainer >
     );
-}
-
-export default function App() {
-    return StackView()
 }
 
 

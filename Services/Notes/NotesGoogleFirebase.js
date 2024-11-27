@@ -56,10 +56,6 @@ async function saveToDb(note) {
     return true
 }
 
-function errorHandler(err) {
-    console.log(err)
-}
-
 export async function save(noteObject) {
     const images = await uploadToStorage(noteObject.images)
     const note = createItem(noteObject, userInfo().uid, images)
