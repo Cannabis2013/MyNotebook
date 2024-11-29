@@ -5,8 +5,7 @@ import { getAllNotes, fetchNotes } from "../Services/Notes/NotesInterface"
 import IconButton from "../Components/Controls/IconButton"
 import { currentLocation } from '../Services/location/locations'
 import { useFocusEffect } from "@react-navigation/native"
-import NoteMarker from "../Components/Map/NoteMarker"
-import { imageFetch } from "../Services/Images/imageFetch"
+import NoteMarker from "../Components/Map/MapMarker"
 
 const initialCoords = {
     latitude: 55.640514005209646,
@@ -26,14 +25,13 @@ export default function NotesMapView({ navigation }) {
     }
 
     useFocusEffect(useCallback(() => {
-        fetchNotes().then((status) => {
-            if(!needsFetch)
+        fetchNotes().then(() => {
+            if (!needsFetch)
                 return
-            const notesData = getAllNotes()
-            updateMarkers(notesData).then(noteMarkers => {
-                setMarkers(noteMarkers)
-                setNeedsFetch(false)
-            })
+            const noteMarkers = getAllNotes().map(noteData => NoteMarker(noteData,
+                item => navigation.navigate("Note details", { note: item })))
+            setMarkers(noteMarkers)
+            setNeedsFetch(false)
         }).catch(handleFetchError)
     }))
 
@@ -41,7 +39,7 @@ export default function NotesMapView({ navigation }) {
         const coords = e.nativeEvent.coordinate
         navigation.navigate("Create note", { "coords": coords })
     }
-    
+
     async function goToCurrentLocation() {
         const cPos = await currentLocation()
         const coords = {
@@ -52,23 +50,6 @@ export default function NotesMapView({ navigation }) {
         }
         setMapCoords({})
         setMapCoords(coords)
-    }
-
-    function toLocationCoords(latitude, longitude) {
-        return {
-            latitude: latitude ?? initialCoords.latitude,
-            longitude: longitude ?? initialCoords.longitude
-        }
-    }
-
-    async function updateMarkers(notesData) {
-        const noteMarkers = notesData.map(async (noteData) => {
-            const coordinates = toLocationCoords(noteData.latitude, noteData.longitude)
-            const imageUrl = noteData.images[0]?.uri ?? undefined
-            const imageData = await imageFetch(imageUrl);
-            return NoteMarker(coordinates, noteData.title, noteData.content, imageData)
-        })
-        return noteMarkers
     }
 
     return (

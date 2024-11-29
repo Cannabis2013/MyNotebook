@@ -21,26 +21,14 @@ export default function NotesListView({ navigation }) {
         }).catch(handleFetchError)
     }))
 
-    function redirectTo(pageName, prop) {
-        navigation.navigate(pageName, prop)
-    }
-
-    function detailsHandler(item){
-        navigation.navigate("Note details", {note: item})
-    }
-
-    function deleteItem(item){
-        redirectTo("Delete note",{ note: item })
-    }
-
     return (
         <View style={styles.container}>
             <View style={styles.buttonLayout}>
-                <Button title={"Opret"} color={"green"} onPress={() => redirectTo("Create note")} />
+                <Button title={"Opret"} color={"green"} onPress={() => navigation.navigate("Create note")} />
             </View>
             <FlatList id={"notesListView"} style={styles.listView}
                 data={notesData}
-                renderItem={({ item }) => <NoteItem item={item} clickHandler={detailsHandler} deleteHandler={deleteItem} ></NoteItem>} />
+                renderItem={({ item }) => <NoteItem item={item} clickHandler={item => navigation.navigate("Note details", {note: item})} deleteHandler={item => redirectTo("Delete note",{ note: item })} ></NoteItem>} />
         </View>
     )
 }
